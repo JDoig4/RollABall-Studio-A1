@@ -24,12 +24,12 @@ public class InputManager : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            OnMove?.Invoke(Vector2.right);
+            OnMove?.Invoke(Vector2.left);
             Debug.Log($"User's Input: right");
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            OnMove?.Invoke(Vector2.left);
+            OnMove?.Invoke(Vector2.right);
             Debug.Log($"User's Input: left");
         }
     }
