@@ -8,29 +8,27 @@ public class InputManager : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            Debug.Log("Mouse");
-        }
+        Vector2 input = Vector2.zero;
         if (Input.GetKey(KeyCode.W))
         {
-            OnMove?.Invoke(Vector2.up);
+            input += Vector2.up;
             Debug.Log($"User's Input: up");
         }
-        else if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
-            OnMove?.Invoke(Vector2.down);
+            input += Vector2.down;
             Debug.Log($"User's Input: down");
         }
-        else if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
-            OnMove?.Invoke(Vector2.left);
+            input += Vector2.left;
             Debug.Log($"User's Input: right");
         }
-        else if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
-            OnMove?.Invoke(Vector2.right);
+            input += Vector2.right;
             Debug.Log($"User's Input: left");
         }
+        OnMove?.Invoke(input);
     }
 }
